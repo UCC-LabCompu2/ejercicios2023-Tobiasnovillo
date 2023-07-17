@@ -2,17 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+   
     <title>Ejercicio Columnas</title>
+    <style>#tituloprincipal {color:#1d0ca2;}
+
+    .columna1{
+        float: left;
+        width: 48%;
+        padding: 0 15px;
+
+    }
+    
+    </style>
 </head>
 <body>
 <!--Agregar la etiqueta semántica para la cabecera. La cabecera debe contener un titulo-->
 <!--Separe la noticia en parrafos-->
 <header>
-<h1>Diario On-line</h1>
+<h1 id= "tituloprincipal" Style="color:#1d0ca2" >Diario On-line</h1>
+<img src="imagenes/img-mundo.png">
 </header>
 <section>
 <h3>
-   <strong>CordoBici</strong> 
+   <strong
+  id="titulonoticia">  CordoBici
+</strong> 
 </h3>
 <h6>
 <em>El 07/03/2018 en Agropecuarias y Ambiente</em> 
@@ -85,5 +99,9 @@
             sustentabilidad de los ciudadanos de nuestra ciudad.
         </p> 
 </section>
+<footer>
+    Autor: Tobias Novillo
+
+</footer>
 </body>
 </html>
