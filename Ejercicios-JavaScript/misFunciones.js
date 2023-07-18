@@ -5,3 +5,71 @@
  * @param Parámetro B
  * @return Valor que retorna
  */
+function cambiarunidades(id,Valor){
+    if(isNaN(Valor)){
+        alert("El valor ingresado no existe.")
+        document.lasunidades.unid_metro.value= " ";
+        document.lasunidades.unid_pie.value= " ";
+        document.lasunidades.unid_yarda.value= " ";
+        document.lasunidades.unid_pulgada.value=  " ";
+    }
+    else if (id=="metro"){
+        document.lasunidades.unid_pulgada.value= Valor*39.3701;
+        document.lasunidades.unid_pie.value=Valor*3.28084;
+        document.lasunidades.unid_yarda.value=Valor*1.0936;
+    }
+    else if(id=="pulada"){
+
+    }
+    else if(id=="pie"){
+
+    }
+    else if(id=="yarda"){
+
+    }
+}
+let cargarlisteners = ()=> {
+    document.getElementById ("mycanvas").addEventListener("mousemove", dibujarcuadriculado)
+}
+let dibujarcuadriculado = () =>{
+    const canvas = document.getElementById("mycanvas");
+    const ctx = canvas.getcontext("2d");
+
+    const anchoMax = canvas.Width;
+    const alturaMax = canvas.Height;
+    const paso = 20;
+//lineas Verticales
+    for(let i=paso; i<anchoMax; i+=paso){
+    ctx.beginPath();
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, alturaMax);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
+}
+//lineas horizontales
+for(let i=paso; i<alturaMax; i+=paso){
+    ctx.beginPath();
+    ctx.moveTo(0, i);
+    ctx.lineTo(anchoMax, i);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
+}
+//eje x
+    ctx.beginPath();
+    ctx.moveTo(0, alturaMax/2);
+    ctx.lineTo(anchoMax, alturaMax/2);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath();
+    //eje y
+    ctx.beginPath();
+    ctx.moveTo(anchoMax/2, 0);
+    ctx.lineTo(anchoMax/2, alturaMax);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath();
+
+}
+
