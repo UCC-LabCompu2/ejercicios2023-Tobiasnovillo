@@ -1,9 +1,9 @@
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Conversion de unidades de mts, pies, yardas y pulgadas.
+ * @method cambiarunidades
+ * @param {string} id- El id de los inputs de las unidades de medida.
+ * @param {number} Valor- El valor de los inputs de las unidades
+ * @return 
  */
 function cambiarunidades(id,Valor){
     if(isNaN(Valor)){
@@ -34,6 +34,26 @@ function cambiarunidades(id,Valor){
         }
 
 }
+
+function grad_rad(id,valor){
+    var rad, grad;
+    if(isNaN(valor)){
+        alert("El valor ingresado es invalido. Ingrese valores en " + id + ".");
+        document.grados_a_radianes.unid_grados.value=" ";
+        document.grados_a_radianes.unid_radianes.value=" ";
+    }else if(id=="grados"){
+        grad=document.getElementById("grados").value;
+        rad=(grad*Math.PI)/180;
+    }else if(id=="radianes"){
+        rad=document.getElementById("radianes").value;
+        grad=(rad*180)/Math.PI;
+    }
+    document.getElementById("grados").value=grad;
+    document.getElementById("radianes").value=rad;
+}
+
+
+
 let cargarlisteners = ()=> {
     document.getElementById ("mycanvas").addEventListener("mousemove", dibujarcuadriculado)
 }
