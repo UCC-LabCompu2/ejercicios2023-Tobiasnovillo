@@ -5,6 +5,7 @@
  * @param {number} Valor- El valor de los inputs de las unidades
  * @return 
  */
+
 function cambiarunidades(id,Valor){
     if(isNaN(Valor)){
         alert("El valor ingresado es invalido. Ingrese valores en " + id + ".");
@@ -34,6 +35,48 @@ function cambiarunidades(id,Valor){
         }
 
 }
+/*
+cambiarunidades = (id,valor) => {
+    let met, pul, pie, yar;
+
+    if(valor.includes(",")){
+        valor = valor.replace(",", ".")
+    }
+    if(isNaN(valor)){
+        alert("El valor ingresado es incorrecto");
+        met = "";
+        pul = "";
+        pie = "";
+        yar = "";
+    }else if(id==="metro"){
+        met = valor;
+        pul = valor*39.3701;
+        pie = valor*3.28084;
+        yar = valor*1.09361;
+    }else if(id==="pulgada"){
+        pul=valor;
+        met=valor*0.0254;
+        pie=valor*0.0833333;
+        yar=valor*0.0277778;
+    }
+    else if(id==="pie"){
+        pie=valor;
+        met=valor*0.3048;
+        pul=valor*12;
+        yar=valor*0.333333;
+    }else if(id==="yarda"){
+        yar=valor;
+        met=valor*0.9144;
+        pie=valor*3;
+        pul=valor*36;
+    }
+    document.lasUnidades.unid_metro.value = Math.round(met*100)/100;
+    document.lasUnidades.unid_pulgada.value = Math.round(pul*100)/100;
+    document.lasUnidades.unid_pie.value = Math.round(pie);
+    document.lasUnidades.unid_yarda.value = Math.round(yar);
+}
+*/
+
 
 function grad_rad(id,valor){
     var rad, grad;
@@ -97,5 +140,12 @@ for(let i=paso; i<alturaMax; i+=paso){
     ctx.stroke();
     ctx.closePath();
 
+}
+function mostrar_ocultar(valorMO){
+    if(valorMO=="val_mostrar"){
+        document.getElementById("divMO").style.display='block';
+    }else if(valorMO=="val_ocultar"){
+        document.getElementById("divMO").style.display='none';
+    }
 }
 
