@@ -203,5 +203,27 @@ function Dibujarcircuad(){
     ctx.fillstyle= "#8b4c99";
     ctx.fill();
 }
+var bandera;
+function dibujar(event){
+    var canvas=document.getElementById("Minipaint");
+    var ctx= getcontext("2d");
+    var posx = event.clientx;
+    var posy = event.clienty;
+    console.log(posx, posy);
+    canvas.onmousedown= function() {bandera=true};
+    canvas.onmouseup= function() {bandera=false};
+    if(bandera){
+        ctx.fillrect(posx, posy, 5, 5);
+        ctx.fill;
+    }
+    ctx.fillrect(posx, posy, 5, 5);
+    ctx.fill();
+}
+
+function limpiarcanv(){
+    var canvas= document.getElementById("limpiar");
+    var ctx=canvas.getcontext("2d");
+    canvas.width=canvas.width;
+}
 
 
