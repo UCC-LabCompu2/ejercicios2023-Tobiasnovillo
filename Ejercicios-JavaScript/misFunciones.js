@@ -269,4 +269,17 @@ function dibujarcuadriculado (){
 
 }
 
+function dibujarArc(x, y){
+    var canvas=document.getElementById("myCanvas");
+    var ctx=canvas.getcontext("2d");
+    console.log(x, y);
+    var img= new Image();
+    img.src="images/auto.png";
+    ctx.drawImage(img, 0,0);
+    canvas.width=canvas.width;
+    
+    img.onload=function(){
+        ctx.drawImage(img, x, y);
+    }
+}
 
