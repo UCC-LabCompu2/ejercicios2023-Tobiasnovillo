@@ -189,5 +189,19 @@ function cargarResultados(){
     document.getElementById("dist").value= can + " " + un;
 
 }
+function Dibujarcircuad(){
+    var canvas= document.getElementById("myCanvas");
+    var ctx= canvas.getcontext("2d");
+    var yMax= canvas.Height;
+    var margen=5;
+    var xMax=canvas.Width;
+
+    ctx.fillstyle= "#333899";
+    ctx.fillrect( 0+margen, yMax-40-margen, 40, 40);
+    ctx.arc(xMax/2, yMax/2, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fillstyle= "#8b4c99";
+    ctx.fill();
+}
 
 
