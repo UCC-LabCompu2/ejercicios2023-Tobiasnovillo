@@ -97,7 +97,7 @@ function grad_rad(id,valor){
 
 
 
-let cargarlisteners = ()=> {
+/*let cargarlisteners = ()=> {
     document.getElementById ("mycanvas").addEventListener("mousemove", dibujarcuadriculado)
 }
 let dibujarcuadriculado = () =>{
@@ -140,7 +140,7 @@ for(let i=paso; i<alturaMax; i+=paso){
     ctx.stroke();
     ctx.closePath();
 
-}
+}*/
 function mostrar_ocultar(valorMO){
     if(valorMO=="val_mostrar"){
         document.getElementById("divMO").style.display='block';
@@ -224,6 +224,49 @@ function limpiarcanv(){
     var canvas= document.getElementById("limpiar");
     var ctx=canvas.getcontext("2d");
     canvas.width=canvas.width;
+}
+
+function dibujarcuadriculado (){
+    var canvas= document.getElementById("myCanvas");
+    var ctx=canvas.getcontext("2d");
+    var alturaMax=canvas.Height;
+    var anchoMax=canvas.width;
+    ctx.beginPath();
+    //lineas horizontales
+    for(var i=0;i<alturaMax;){
+    ctx.moveTo(0, i);
+    ctx.lineTo(anchoMax,i);
+    ctx.strokestyle= "#3e67d9"
+    ctx.stroke();
+    i=i+20;
+    }
+    ctx.closePath();
+    
+    //lineas verticales
+    ctx.beginPath();
+    for(var i=0;i<anchoMax;){
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i,alturaMax);
+        ctx.strokestyle= "#3e67d9"
+        ctx.stroke();
+        i=i+20;
+    }
+    ctx.closePath();
+    //ejeX
+    ctx.beginPath();
+    ctx.moveTo(0, alturaMax/2);
+    ctx.lineTo(anchoMax,alturaMax/2);
+    ctx.strokestyle= "#d91c00"
+    ctx.stroke();
+    ctx.closePath();
+    //ejeY
+    ctx.beginPath();
+    ctx.moveTo(anchoMax/2, 0);
+    ctx.lineTo(anchoMax/2,alturaMax);
+    ctx.strokestyle= "#d91c00"
+    ctx.stroke();
+    ctx.closePath();
+
 }
 
 
