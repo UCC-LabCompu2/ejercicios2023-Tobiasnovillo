@@ -282,4 +282,25 @@ function dibujarArc(x, y){
         ctx.drawImage(img, x, y);
     }
 }
+x=0;
+dx=2;
+function animarAuto(){
+    var canvas=document.getElementById("myCanvas");
+    var ctx=canvas.getcontext("2d");
+    console.log(x, y);
+    var img= new Image();
+    img.src="images/auto.png";
+    ctx.drawImage(img, 0,0);
+    canvas.width=canvas.width;
+    
+    img.onload=function(){
+        ctx.drawImage(img, x, 100);
+    }
+   
+    if(x>canvas.width){
+        x=0;
+
+    }
+    x+=dx;
+}
 
